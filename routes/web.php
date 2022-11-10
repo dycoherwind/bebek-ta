@@ -37,7 +37,7 @@ Route::middleware('auth')->group(function(){
         Route::get('profil', [ProfilController::class, 'index'])->name('user.profil');
         Route::get('riwayat-pemesanan', [RiwayatPemesananController::class, 'index'])->name('user.riwayat');
     });
-    Route::get('bayar/{token}', [PesananController::class, 'bayar'])->name('user.bayar');
+    Route::get('bayar/{token}/{id}', [PesananController::class, 'bayar'])->name('user.bayar');
     Route::post('bayar/{token}', [PesananController::class, 'simpanBayar']);
     Route::get('pesan/{id}', [PesananController::class, 'index'])->name('pesan-sekarang');
     Route::post('pesan/simpan', [PesananController::class, 'simpan'])->name('user.simpanSewa');

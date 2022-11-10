@@ -44,14 +44,14 @@ class PesananController extends Controller
             $paket = Paket::find($request->paket_id);
             $token = MidtransController::config($pesanan->id, $paket->harga, $user);
 
-            return redirect()->route('user.bayar', ['token' => $token]);
+            return redirect()->route('user.bayar', ['token' => $token, 'id' => $pesanan->id]);
         }
     }
 
-    public function bayar($token)
+    public function bayar($token, $id)
     {
         $title = 'Bayar';
-        return view('user.bayar', compact('title', 'token'));
+        return view('user.bayar', compact('title', 'token', 'id'));
     }
 
     public function simpanBayar(Request $request)
@@ -59,7 +59,7 @@ class PesananController extends Controller
         $json = json_decode($request->json);
         
         $transaksi = new Transaksi();
-        $transaksi->pesanan_id = $json->order_id;
+        $transaksi->pesanan_id = $request->order_id;
         $transaksi->transaksi_id = $json->transaction_id;
         $transaksi->biaya = $json->gross_amount;
         $transaksi->tipe_pembayaran = $json->payment_type;
@@ -71,6 +71,12 @@ class PesananController extends Controller
         $transaksi->pdf_url = $json->pdf_url ?? null;
         $transaksi->status_pembayaran = $json->transaction_status;
         $transaksi->save();
+
+        $pesanan = Pesanan::find($request->order_id);
+        if($json->transaction_status == 'settlement'){
+            $pesanan->status = 'lunas';
+            $pesanan->save();
+        }
 
         return redirect('nota/'.$transaksi->id);
     }

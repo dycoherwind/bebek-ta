@@ -22,7 +22,7 @@ class MidtransController extends Controller
         
         $params = array(
             'transaction_details' => array(
-                'order_id' => $pesanan_id,
+                'order_id' => rand(),
                 'gross_amount' => $harga,
             ),
             'customer_details' => array(

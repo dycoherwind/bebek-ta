@@ -12,6 +12,7 @@ data-client-key="{{ env('MIDTRANS_CLIENT_KEY') }}"></script>
 
 <form action="" method="post" id="form-submit">
     @csrf
+    <input type="hidden" name="order_id" value="{{ $id }}">
     <input type="hidden" name="json" id="json_callback">
 </form>
 @endsection
