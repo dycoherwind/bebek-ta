@@ -30,7 +30,7 @@
                 <h4>Kwitansi Pembayaran</h4>
             </div>
             <div class="d-flex justify-content-left my-3">
-              <p>{{ date('Y-m-d H:i:s') }}</p>
+              <p>{{ Carbon\Carbon::parse($transaksi->updated_at)->format('d M Y H:i:s') }}</p>
             </div>
             <div class="mt-4 pt-2">
                 
@@ -44,6 +44,38 @@
                       </tr>
                     </thead>
                     <tbody>
+                      @if ($transaksi->biaya != $transaksi->pesanan->paket->harga)
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>{{ $transaksi->pesanan->nama }}</td>
+                        <td>
+                          {{ $transaksi->tipe_pembayaran }}
+                        </td>
+                        <td>
+                          Rp. {{ number_format($transaksi->pesanan->paket->harga, 0, 0, '.') }}
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row"></th>
+                        <td></td>
+                        <td>
+                          DP
+                        </td>
+                        <td>
+                          Rp. {{ number_format($transaksi->biaya, 0, 0, '.') }}
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row"></th>
+                        <td></td>
+                        <td>
+                          Sisa
+                        </td>
+                        <td>
+                          Rp. {{ number_format(($transaksi->pesanan->paket->harga - $transaksi->biaya), 0, 0, '.') }}
+                        </td>
+                      </tr>
+                      @else 
                       <tr>
                         <th scope="row">1</th>
                         <td>{{ $transaksi->pesanan->nama }}</td>
@@ -64,6 +96,7 @@
                         <td>Total</td>
                         <td>Rp. {{ number_format($transaksi->biaya, 0, 0, '.') }}</td>
                       </tr>
+                      @endif
                     </tbody>
                   </table>
             </div>

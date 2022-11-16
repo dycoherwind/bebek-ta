@@ -42,7 +42,11 @@ class PesananController extends Controller
             );
             $user = json_encode($user);
             $paket = Paket::find($request->paket_id);
-            $token = MidtransController::config($pesanan->id, $paket->harga, $user);
+            if($paket->harga >= 3000000){
+                $token = MidtransController::config($pesanan->id, 500000, $user);
+            } else {
+                $token = MidtransController::config($pesanan->id, $paket->harga, $user);
+            }
 
             return redirect()->route('user.bayar', ['token' => $token, 'id' => $pesanan->id]);
         }
@@ -85,5 +89,12 @@ class PesananController extends Controller
     {
         $transaksi = Transaksi::find($id);
         return view('user.kwitansi', compact('transaksi'));
+    }
+
+    public function daftar()
+    {
+        $pesanan = Pesanan::where('user_id', auth()->user()->id)
+                    ->get();
+        return view('user.daftar-pesanan', compact('pesanan'));
     }
 }

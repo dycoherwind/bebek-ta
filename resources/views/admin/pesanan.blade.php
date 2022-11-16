@@ -9,6 +9,8 @@
         <th scope="col">Paket</th>
         <th scope="col">No HP</th>
         <th scope="col">Tanggal</th>
+        <th scope="col">Harga</th>
+        <th scope="col">Status Pembayaran</th>
       </tr>
     </thead>
     <tbody>
@@ -23,6 +25,7 @@
           <td>{{ $item->no_hp }}</td>
           <td>{{ $item->tanggal }}</td>
           <td>{{ $item->paket->harga }}</td>
+          <td>{{ $item->status }}</td>
         </tr>
         @php
             $no++;

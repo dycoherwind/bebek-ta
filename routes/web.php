@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\User\ProfilController;
 use App\Http\Controllers\User\PesananController;
 use App\Http\Controllers\Api\RajaOngkirController;
 use App\Http\Controllers\Admin\AdminHomeController;
@@ -34,11 +35,13 @@ Auth::routes();
 
 Route::middleware('auth')->group(function(){
     Route::prefix('user')->group(function(){
-        Route::get('profil', [ProfilController::class, 'index'])->name('user.profil');
+        Route::get('profil', [ProfilController::class, 'index'])->name('profil');
+        Route::post('profil', [ProfilController::class, 'simpan'])->name('profil.simpan');
+        Route::get('pesanan', [PesananController::class, 'daftar'])->name('pesanan');
         Route::get('riwayat-pemesanan', [RiwayatPemesananController::class, 'index'])->name('user.riwayat');
     });
     Route::get('bayar/{token}/{id}', [PesananController::class, 'bayar'])->name('user.bayar');
-    Route::post('bayar/{token}', [PesananController::class, 'simpanBayar']);
+    Route::post('bayar', [PesananController::class, 'simpanBayar'])->name('user.bayar.simpan');
     Route::get('pesan/{id}', [PesananController::class, 'index'])->name('pesan-sekarang');
     Route::post('pesan/simpan', [PesananController::class, 'simpan'])->name('user.simpanSewa');
     Route::get('kota', [RajaOngkirController::class, 'kotaProvinsi'])->name('kota');

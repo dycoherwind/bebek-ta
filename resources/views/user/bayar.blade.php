@@ -10,7 +10,7 @@ data-client-key="{{ env('MIDTRANS_CLIENT_KEY') }}"></script>
 <div class="container">
 </div>
 
-<form action="" method="post" id="form-submit">
+<form action="{{ route('user.bayar.simpan') }}" method="post" id="form-submit">
     @csrf
     <input type="hidden" name="order_id" value="{{ $id }}">
     <input type="hidden" name="json" id="json_callback">
