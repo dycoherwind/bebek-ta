@@ -9,9 +9,9 @@ href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
 
 @section('content')
 <div class="container">
-    <div class="w-100 mt-3 rounded p-2 breadcrumb bg-light">
+    <div class="w-100 mt-3 rounded p-2 breadcrumb">
         <li class="breadcrumb-item ml-5"><a href="{{ route('home') }}">Home</a></li>
-        <li class="breadcrumb-item"><a href="/">{{ $paket->kategori->nama }}</a></li>
+        <li class="breadcrumb-item" ><a href="/">{{ $paket->kategori->nama }}</a></li>
         <li class="breadcrumb-item active" aria-current="page">{{ $paket->nama }}</li>
     </div>
 
@@ -37,18 +37,18 @@ href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
                 </div>
     
                 <div id="accordion mt-3">
-                    <div class="card bg-light border-secondary">
-                        <div class="card-body mt-3 d-flex justify-content-center">
+                    <div class="card bg-light border-secondary" style="color:black">
+                        <div class="card-body mt-3 d-flex justify-content-center" style="color:black">
                             <h4>Rp{{ number_format($paket->harga, 0, '', '.') }}</b></h4>
                         </div>
-                        <div class="d-flex justify-content-center">
+                        <div class="d-flex justify-content-center" style="color:black">
                             <span>Durasi Pengerjaan : {{ $paket->durasi }}</span>
                         </div>
                     </div>
         
-                    <div class="mt-4 mr-4 row">
-                        <div class="col-md-4">
-                            <a href="https://wa.me/{{ env('WHATSAPP') }}" role="button" class="btn btn-secondary w-100">
+                    <div class="mt-4 mr-4 row" >
+                        <div class="col-md-4"  >
+                            <a style="border: 1px yellow solid; color: yellow;" href="https://wa.me/{{ env('WHATSAPP') }}" role="button" class="btn btn-secondary w-100">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-text" viewBox="0 0 16 16">
                                     <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
                                     <path d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6zm0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"/>
@@ -56,8 +56,8 @@ href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
                                 <span>Kirim Pesan</span>
                             </a>
                         </div>      
-                        <div class="col-md-8">
-                            <a href="{{ route('pesan-sekarang', ['id' => $paket->id]) }}" role="button" id="pesan" class="btn btn-secondary w-100 mx-1">Pesan Sekarang</a>
+                        <div class="col-md-8" >
+                            <a style="border: 1px yellow solid; color: yellow;" href="{{ route('pesan-sekarang', ['id' => $paket->id]) }}" role="button" id="pesan" class="btn btn-secondary w-100 mx-1">Pesan Sekarang</a>
                         </div>                      
                     </div>
     

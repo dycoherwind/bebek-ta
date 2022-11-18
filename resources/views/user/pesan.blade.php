@@ -2,11 +2,11 @@
 
 @section('content')
 <div class="container">
-    <div class="mt-3 w-100">
+    <div class="mt-3 w-100" >
         <form action="{{ route('user.simpanSewa') }}" method="POST" id="form-pesan">
             @csrf
             <input type="hidden" name="paket_id" value="{{ $paket->id }}">
-            <h4 class="text-center" style="color: #ab7661; font-family: 'Times New Roman', Times, serif">Formulir Pemesanan</h4><br>
+            <h4 class="text-center" style="color: white; font-family: 'Times New Roman', Times, serif">Formulir Pemesanan</h4><br>
             <div class="form-group mb-3">
                 <label for="paket" style="font-family: 'Times New Roman', Times, serif">Paket</label>
                 <input type="text" class="form-control" value="{{ $paket->nama." ".$paket->kategori->nama }}" name="paket" id="paket" placeholder="nama" readonly>
@@ -65,8 +65,8 @@
             <h1 class="modal-title fs-5" id="exampleModalLabel">Konfirmasi Biaya Pengiriman</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-                Lokasi anda berada diluar DI Yogyakarta. Untuk biaya pengiriman akan ditanggung anda sendiri. Apakah Anda Setuju ?
+            <div class="modal-body" style="color: black">
+                Lokasi anda berada diluar DI Yogyakarta. Segala atktifitas tentang pengiriman atau pengantaran unit di luar tanggung jawab kami Dan Untuk biaya dan proses pengiriman unit akan ditanggung anda sendiri. Apakah Anda Setuju ?
             </div>
             <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
@@ -85,7 +85,7 @@
             var province = prov.split("|");
             if(province != 0){
                 if(province[0] != 5){
-                    $('#button-form').html(`<button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    $('#button-form').html(`< button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                             Pesan Sekarang
                                         </button>`);
                 } else {

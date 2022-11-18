@@ -22,7 +22,7 @@
           <th scope="col">Total Pembayaran</th>
           <th scope="col">Status Pembayaran</th>
           <th scope="col">Tipe Pembayaran</th>
-          <th scope="col">Aksi</th>
+          {{-- <th scope="col">Aksi</th>  --}}
         </tr>
       </thead>
       <tbody>
@@ -40,7 +40,7 @@
           <td class="text-center">{{ $item->tipe_pembayaran }}</td>
           <td>
             <div class="d-flex">
-              <a onclick="window.open('{{ $item->pdf_url }}')" download="" class="btn btn-success">Download</a>
+              {{-- <a onclick="window.open('{{ $item->pdf_url }}')" download="" class="btn btn-success">Download</a>  --}}
             </div>
           </td>
         </tr>

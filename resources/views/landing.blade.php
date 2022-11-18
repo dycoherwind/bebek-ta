@@ -47,11 +47,11 @@ href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
             </div>
             <div class="col-1"></div>
             <div class="col-6 py-5 mt-2">
-                <h3 style="font-family: Imprima ;">We Have The Best</h3>
-                <p class="display-3" style="font-family: Imprima ;">Restoration Service</p>
-                <h4 style="font-family: Imprima ;">Restorasi Motor adalah sebuah seni dalam membangun dan
+                <h2 style="font-family: 'Imprima', sans-serif;">We Have The Best</h2>
+                <p class="display-3" style="font-family: 'Imprima', sans-serif;">Restoration Service</p>
+                <h5 style="font-family: 'Imprima', sans-serif;" >Restorasi Motor adalah sebuah seni dalam membangun dan
                     mengembalikan suatu kenangan dan ingatan tentang motor
-                    yang anda cintai.</h4>
+                    yang anda cintai.</h5>
             </div>
         </div>
         <div class="mb-4">
@@ -266,9 +266,9 @@ href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
             success: function(data){
                 var div = '';
                 $('#listDetail').html(`
-                <button onclick="list(`+id+`, 'detailing')" type="button" class="btn btn-secondary">Detailing</button>
+                <button onclick="list(`+id+`, 'detailing')"  style="border: 1px yellow solid; color: yellow;" type="button" class="btn btn-secondary">Detailing</button>
                 <div class="mx-2"></div>
-                <button onclick="list(`+id+`, 'restorasi')" type="button" class="btn btn-outline-secondary">Restorasi</button>`);
+                <button onclick="list(`+id+`, 'restorasi')" style="border: 1px yellow solid; color: yellow;" type="button" class="btn btn-outline-secondary">Restorasi</button>`);
                 $.each(data, function(key, value){
                     var json = JSON.parse(value.img);
                     console.log(json[0]);
@@ -301,14 +301,14 @@ href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
                 $('#paketDetail').html(div);
                 if(listk == 'detailing'){
                     $('#listDetail').html(`
-                    <button onclick="list(`+idk+`, 'detailing')" type="button" class="btn btn-secondary">Detailing</button>
+                    <button onclick="list(`+idk+`, 'detailing')" style="background-color: yellow; color: black;" type="button" class="btn btn-secondary">Detailing</button>
                     <div class="mx-2"></div>
-                    <button onclick="list(`+idk+`, 'restorasi')" type="button" class="btn btn-outline-secondary">Restorasi</button>`);
+                    <button onclick="list(`+idk+`, 'restorasi')" style="border: 1px yellow solid; color: yellow;" type="button" class="btn btn-outline-secondary">Restorasi</button>`);
                 } else {
                     $('#listDetail').html(`
-                    <button onclick="list(`+idk+`, 'detailing')" type="button" class="btn btn-outline-secondary">Detailing</button>
+                    <button onclick="list(`+idk+`, 'detailing')" style="background-color: yellow; color: black;" type="button" class="btn btn-outline-secondary">Detailing</button>
                     <div class="mx-2"></div>
-                    <button onclick="list(`+idk+`, 'restorasi')" type="button" class="btn btn-secondary">Restorasi</button>`);
+                    <button onclick="list(`+idk+`, 'restorasi')" style="border: 1px yellow solid; color: yellow;" type="button" class="btn btn-secondary">Restorasi</button>`);
                 }
                 $.each(data, function(key, value){
                     var json = JSON.parse(value.img);

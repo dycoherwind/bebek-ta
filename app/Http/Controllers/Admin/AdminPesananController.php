@@ -15,4 +15,17 @@ class AdminPesananController extends Controller
                     ->get();
         return view('admin.pesanan', compact('title', 'pesanan'));
     }
+
+    public function komentar(Request $request)
+    {
+        $pesanan = Pesanan::find($request->id);
+        $pesanan->komentar = $request->komentar;
+        if($request->hasFile('file')){
+            $filename = rand() . $request->file('file')->getClientOriginalName();
+            $request->file('file')->move(public_path() . '/pesanan', $filename );
+            $pesanan->file = $filename;
+        }
+        $pesanan->save();
+        return redirect()->route('admin.pesanan');
+    }
 }

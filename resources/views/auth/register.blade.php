@@ -24,6 +24,14 @@
                                     <input type="text" name="name" class="form-control" id="name">
                                 </div>
                                 <div class="mb-2">
+                                    <label for="no_hp" class="form-label">No Hp</label>
+                                    <input type="no_hp" name="no_hp" class="form-control" id="no_hp">
+                                </div>
+                                <div class="mb-2">
+                                    <label for="alamat" class="form-label">Alamat</label>
+                                    <input type="alamat" name="alamat" class="form-control" id="alamat">
+                                </div>
+                                <div class="mb-2">
                                     <label for="email" class="form-label">Email</label>
                                     <input type="email" name="email" class="form-control" id="email">
                                 </div>

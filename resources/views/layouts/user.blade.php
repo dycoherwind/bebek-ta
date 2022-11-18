@@ -18,7 +18,16 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
     <!-- CSS Files -->
     <link id="pagestyle" href="{{ asset('asset/css/material-dashboard.css?v=3.0.0') }}" rel="stylesheet" />
+
+    <style>
+        .btn-primary {
+            background-color: yellow;
+            color: black;
+        }
+    </style>
+
     @yield('css')
+    
     <title>User | Dashboard</title>
 </head>
 <body class="g-sidenav-show">

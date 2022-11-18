@@ -18,7 +18,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white {{ request()->routeIs('profil') ? 'active bg-gradient-primary' : '' }}" href="{{ route('profil') }}">
+          <a class="nav-link text-white {{ request()->routeIs('profil') ? 'active' : '' }}" href="{{ route('profil') }}">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">person</i>
             </div>
@@ -26,7 +26,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white {{ request()->routeIs('pesanan') ? 'active bg-gradient-primary' : '' }}" href="{{ route('pesanan') }}">
+          <a class="nav-link text-white {{ request()->routeIs('pesanan') ? 'active' : '' }}" href="{{ route('pesanan') }}">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">work</i>
             </div>
@@ -34,7 +34,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white {{ request()->routeIs('user.riwayat') ? 'active bg-gradient-primary' : '' }}" href="{{ route('user.riwayat') }}">
+          <a class="nav-link text-white {{ request()->routeIs('user.riwayat') ? 'active' : '' }}" href="{{ route('user.riwayat') }}">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">receipt_long</i>
             </div>

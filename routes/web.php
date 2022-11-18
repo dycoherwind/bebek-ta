@@ -55,6 +55,7 @@ Route::prefix('admin')->middleware(['auth','admin'])->group(function() {
     Route::get('laporan', [AdminLaporanController::class, 'index'])->name('admin.laporan');
 
     Route::get('pesanan', [AdminPesananController::class, 'index'])->name('admin.pesanan');
+    Route::post('pesanan/komentar', [AdminPesananController::class, 'komentar'])->name('admin.pesanan.komentar');
 
     Route::prefix('kategori')->group(function() {
         Route::get('/', [AdminKategoriController::class, 'index'])->name('admin.kategori');
