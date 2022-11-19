@@ -62,10 +62,10 @@ href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
         <div class="d-flex" id="kategori" style="text-align: center">
             @foreach ($kategori as $item)
             <button type="button" onclick="detail('{{ $item->id }}')" class="card text-decoration-none text-muted" style="width: 18rem; border: none; background-color:black">
-                <div class="d-flex justify-content-center">
+                <div class="w-100 d-flex justify-content-center">
                     <img src="{{ asset('kategori/motor/'.$item->img.'') }}" class="rounded-circle px-4 card-img-top" style="width: 150px; height: 100px" alt="...">
                 </div>
-                <div class="card-body">
+                <div class="w-100 card-body d-flex justify-content-center">
                   <p class="card-text text-white">{{ $item->nama }}</p>
                 </div>
             </button>
@@ -266,7 +266,7 @@ href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
             success: function(data){
                 var div = '';
                 $('#listDetail').html(`
-                <button onclick="list(`+id+`, 'detailing')"  style="border: 1px yellow solid; color: yellow;" type="button" class="btn btn-secondary">Detailing</button>
+                <button onclick="list(`+id+`, 'detailing')"  style="background-color: yellow; color: black;" type="button" class="btn btn-secondary">Detailing</button>
                 <div class="mx-2"></div>
                 <button onclick="list(`+id+`, 'restorasi')" style="border: 1px yellow solid; color: yellow;" type="button" class="btn btn-outline-secondary">Restorasi</button>`);
                 $.each(data, function(key, value){
@@ -306,9 +306,9 @@ href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
                     <button onclick="list(`+idk+`, 'restorasi')" style="border: 1px yellow solid; color: yellow;" type="button" class="btn btn-outline-secondary">Restorasi</button>`);
                 } else {
                     $('#listDetail').html(`
-                    <button onclick="list(`+idk+`, 'detailing')" style="background-color: yellow; color: black;" type="button" class="btn btn-outline-secondary">Detailing</button>
+                    <button onclick="list(`+idk+`, 'detailing')" style="border: 1px yellow solid; color: yellow;" type="button" class="btn btn-outline-secondary">Detailing</button>
                     <div class="mx-2"></div>
-                    <button onclick="list(`+idk+`, 'restorasi')" style="border: 1px yellow solid; color: yellow;" type="button" class="btn btn-secondary">Restorasi</button>`);
+                    <button onclick="list(`+idk+`, 'restorasi')" style="background-color: yellow; color: black;" type="button" class="btn btn-secondary">Restorasi</button>`);
                 }
                 $.each(data, function(key, value){
                     var json = JSON.parse(value.img);

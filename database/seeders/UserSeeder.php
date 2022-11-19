@@ -19,6 +19,8 @@ class UserSeeder extends Seeder
             'name' => 'user@gmail.com',
             'email' => 'user@gmail.com',
             'password' => bcrypt('12345678'),
+            'no_hp' => '07345617',
+            'alamat' => 'gaysdgasdhas',
         ]);
 
         User::create([
@@ -26,6 +28,8 @@ class UserSeeder extends Seeder
             'email' => 'admin@gmail.com',
             'password' => bcrypt('12345678'),
             'admin' => true,
+            'no_hp' => '08234567',
+            'alamat' => 'sggasdassd',
         ]);
     }
 }
