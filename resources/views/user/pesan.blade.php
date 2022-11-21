@@ -85,7 +85,7 @@
             var province = prov.split("|");
             if(province != 0){
                 if(province[0] != 5){
-                    $('#button-form').html(`< button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    $('#button-form').html(`<button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                             Pesan Sekarang
                                         </button>`);
                 } else {
